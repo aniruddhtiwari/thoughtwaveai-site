@@ -13,6 +13,63 @@ nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
 
 document.getElementById('year').textContent = String(new Date().getFullYear());
 
+const betaAccessTrigger = document.getElementById('beta-access-trigger');
+const betaAccessModal = document.getElementById('beta-access-modal');
+const modalPanel = betaAccessModal?.querySelector('.modal-panel');
+const modalClose = betaAccessModal?.querySelector('.modal-close');
+let modalReturnFocus = null;
+
+const modalFocusableElements = () => Array.from(betaAccessModal?.querySelectorAll(
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+) ?? []);
+
+const openBetaModal = () => {
+  modalReturnFocus = document.activeElement;
+  betaAccessModal.hidden = false;
+  document.body.classList.add('modal-open');
+  modalClose?.focus();
+};
+
+const closeBetaModal = () => {
+  if (betaAccessModal.hidden) return;
+  betaAccessModal.hidden = true;
+  document.body.classList.remove('modal-open');
+  modalReturnFocus?.focus();
+  modalReturnFocus = null;
+};
+
+betaAccessTrigger?.addEventListener('click', openBetaModal);
+modalClose?.addEventListener('click', closeBetaModal);
+
+betaAccessModal?.addEventListener('click', (event) => {
+  if (event.target === betaAccessModal) closeBetaModal();
+});
+
+modalPanel?.addEventListener('click', (event) => event.stopPropagation());
+
+document.addEventListener('keydown', (event) => {
+  if (betaAccessModal?.hidden) return;
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeBetaModal();
+    return;
+  }
+  if (event.key !== 'Tab') return;
+
+  const focusable = modalFocusableElements();
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (!first || !last) return;
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (reduceMotion || !('IntersectionObserver' in window)) {
   document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));

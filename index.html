@@ -109,9 +109,29 @@
 
     <section class="responsible"><div class="container responsible-inner reveal"><div><p class="kicker">Responsible use</p><h2>Built for intentional use.</h2></div><p>ThoughtWaveAI gives the user explicit control over recording, context, visibility, and session behavior. Users are responsible for using recording and AI assistance in accordance with applicable laws, policies, and consent requirements.</p></div></section>
 
-    <section class="section beta" id="beta"><div class="container beta-inner reveal"><img src="./assets/branding/thoughtwaveai-logo-white.png" alt="ThoughtWaveAI emblem" width="120" height="80" loading="lazy"><p class="kicker">Private beta</p><h2>ThoughtWaveAI Private Beta</h2><p>ThoughtWaveAI is currently being refined through controlled Windows testing.</p><a class="button" href="https://github.com/aniruddhtiwari" target="_blank" rel="noopener noreferrer">Follow the Project <span aria-hidden="true">↗</span></a></div></section>
+    <section class="section beta" id="beta"><div class="container beta-inner reveal"><img src="./assets/branding/thoughtwaveai-logo-white.png" alt="ThoughtWaveAI emblem" width="120" height="80" loading="lazy"><p class="kicker">Private beta</p><h2>ThoughtWaveAI Private Beta</h2><p>ThoughtWaveAI is currently being refined through controlled Windows testing.</p><button class="button" id="beta-access-trigger" type="button" aria-haspopup="dialog">Request Beta Access <span aria-hidden="true">→</span></button></div></section>
   </main>
 
   <footer><div class="container footer-inner"><a href="https://github.com/aniruddhtiwari" target="_blank" rel="noopener noreferrer">ThoughtWaveAI by Aniruddh Tiwari &amp; Payal Tiwari</a><p>© <span id="year">2026</span> ThoughtWaveAI. All rights reserved.</p></div></footer>
+
+  <div class="modal-backdrop" id="beta-access-modal" hidden>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="beta-modal-title" aria-describedby="beta-modal-intro beta-modal-examples">
+      <button class="modal-close" type="button" aria-label="Close beta access dialog">×</button>
+      <p class="kicker">Private beta</p>
+      <h2 id="beta-modal-title">Request ThoughtWaveAI Beta Access</h2>
+      <p id="beta-modal-intro">We’re currently inviting a small number of beta users. To help us understand where ThoughtWaveAI can create the most value, please tell us how you would use it in a real-world business scenario.</p>
+      <p class="modal-prompt">Please include:</p>
+      <ol class="modal-list">
+        <li>Your role / industry</li>
+        <li>A brief business scenario where you would use ThoughtWaveAI</li>
+        <li>What you would want ThoughtWaveAI to help you accomplish during that conversation</li>
+      </ol>
+      <p class="modal-examples" id="beta-modal-examples">Examples: client meeting, sales pitch, executive review, technical discussion, consulting session, presentation, brainstorming, or another professional use case.</p>
+      <div class="modal-actions">
+        <a class="button" href="mailto:aniruddhtiwari83@gmail.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Aniruddh</a>
+        <a class="button button-secondary" href="mailto:payal.sagi@yahoo.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Payal</a>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
