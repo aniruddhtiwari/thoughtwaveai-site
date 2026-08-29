@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070a0f">
-  <meta name="description" content="ThoughtWaveAI brings live conversation, your context, requirements, and reference knowledge together for relevant, grounded assistance in the moment.">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="ThoughtWaveAI understands conversations in real time and delivers the right insight or response at the moment it matters.">
   <meta property="og:title" content="ThoughtWaveAI — Real-Time AI Context &amp; Assistance">
   <meta property="og:description" content="Real-time intelligence for the conversations that matter.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./assets/branding/thoughtwaveai-logo.png">
   <title>ThoughtWaveAI — Real-Time AI Context &amp; Assistance</title>
-  <link rel="icon" href="./assets/branding/thoughtwaveai-logo-white.png" type="image/png">
+  <link rel="icon" href="./assets/branding/thoughtwaveai-Icon.png" type="image/png">
   <link rel="stylesheet" href="./styles.css">
   <script src="./script.js" defer></script>
 </head>
@@ -18,120 +18,48 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="ThoughtWaveAI home">
-        <img src="./assets/branding/thoughtwaveai-logo-white.png" alt="" width="42" height="28">
-        <span>ThoughtWaveAI</span>
-      </a>
+      <a class="brand" href="#top" aria-label="ThoughtWaveAI home"><img src="./assets/branding/thoughtwaveai-Icon.png" alt="" width="42" height="42"><span>ThoughtWaveAI</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#features">Features</a><a href="#use-cases">Use Cases</a><a href="#how-it-works">How It Works</a><a href="#shortcuts">Shortcuts</a><a href="#beta">Beta</a>
-      </nav>
-      <a class="button button-small nav-cta" href="#product">Explore ThoughtWaveAI</a>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="#product">Product</a><a href="#how-it-works">How It Works</a><a href="./getting-started/">Getting Started</a><a href="#privacy">Privacy</a><a href="#beta">Beta Access</a></nav>
+      <button class="button button-small nav-cta" type="button" data-beta-trigger>Request Beta Access</button>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="container hero-copy reveal">
-        <p class="eyebrow"><span></span> Live context. Clearer thinking.</p>
-        <h1>Real-time intelligence for the conversations that matter.</h1>
-        <p class="hero-lede">ThoughtWaveAI brings live conversation, your context, requirements, and reference knowledge together to surface relevant, grounded assistance when you need it.</p>
-        <div class="hero-actions"><a class="button" href="#product">Explore the product <span aria-hidden="true">↓</span></a><a class="text-link" href="#how-it-works">See how it works <span aria-hidden="true">→</span></a></div>
-        <ul class="signal-list" aria-label="Product highlights"><li>Live Context</li><li>Grounded Assistance</li><li>Real-Time Response</li></ul>
-      </div>
-      <div class="container product-stage reveal" id="product">
-        <div class="stage-label"><span>Live product view</span><span class="status"><i></i> Active session</span></div>
-        <img src="./assets/screenshots/ai-response-live-transcript.png" alt="ThoughtWaveAI showing an AI response beside the live transcript and chat panel" width="1390" height="687">
+      <div class="hero-orb" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal"><p class="eyebrow">ThoughtWaveAI</p><h1>Real-time intelligence for the conversations that matter.</h1><p class="hero-lede">ThoughtWaveAI understands the conversation in real time, aligns assistance with your context and desired outcome, and gives you the right insight or response at the moment it matters.</p><div class="hero-actions"><button class="button" type="button" data-beta-trigger>Request Beta Access <span aria-hidden="true">→</span></button><a class="text-link" href="#how-it-works">See How It Works <span aria-hidden="true">↓</span></a></div><ul class="signal-list" aria-label="Product highlights"><li>Outcome-led</li><li>Real-time assistance</li><li>Private by default</li></ul></div>
+        <div class="hero-product reveal"><div class="product-window"><div class="window-bar"><span><i></i><i></i><i></i></span><strong>Live conversation</strong><em>Active</em></div><img src="./assets/screenshots/ai-response-live-transcript.png" alt="ThoughtWaveAI AI Response and Live Transcript panels during an active conversation" width="1363" height="582"></div><div class="outcome-chip"><span>Outcome</span><strong>Get my technical design approved</strong><small>Influence · High</small></div></div>
       </div>
     </section>
 
-    <section class="section" id="features">
-      <div class="container">
-        <div class="section-heading reveal"><p class="kicker">One continuous workflow</p><h2>From conversation to useful context.</h2><p>ThoughtWaveAI connects what is being discussed with the information you choose to bring into the session.</p></div>
-        <div class="capability-grid">
-          <article class="capability reveal"><span>01</span><h3>Listen</h3><p>Understand live microphone and system-audio conversation context.</p></article>
-          <article class="capability reveal"><span>02</span><h3>Understand</h3><p>Maintain the current conversational context and recognize what matters now.</p></article>
-          <article class="capability reveal"><span>03</span><h3>Ground</h3><p>Bring in My Context, Requirements, and Reference material.</p></article>
-          <article class="capability reveal"><span>04</span><h3>Assist</h3><p>Surface relevant responses and information in the moment.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section intro-strip" id="product"><div class="container intro-grid reveal"><p class="kicker">One focused companion</p><h2>Prepare with intention. Respond with clarity.</h2><p>Shape assistance around the outcome you want, the room you are in, and the conversation as it unfolds.</p></div></section>
 
-    <section class="section section-tint" id="use-cases">
-      <div class="container">
-        <div class="section-heading reveal"><p class="kicker">Built for professional moments</p><h2>Be ready for the room you’re in.</h2><p>Use one shared context layer across leadership, client, commercial, and technical conversations.</p></div>
-        <div class="use-grid">
-          <article class="use-card featured reveal"><div><span class="use-index">Priority use case</span><h3>Executive &amp; Leadership Meetings</h3></div><p>Bring project facts, requirements, risks, metrics, and prior context into live leadership discussions so key questions can be answered with relevant context at hand.</p></article>
-          <article class="use-card reveal"><h3>Client Meetings</h3><p>Keep client requirements and supporting context available during live discussion.</p></article>
-          <article class="use-card reveal"><h3>Sales &amp; Discovery Calls</h3><p>Connect customer needs with relevant product and company context during the conversation.</p></article>
-          <article class="use-card reveal"><h3>Technical Discussions</h3><p>Use project and reference material while reasoning through architecture, engineering, data, and design questions.</p></article>
-          <article class="use-card reveal"><h3>Presentations</h3><p>Keep supporting information available while presenting and responding to questions.</p></article>
-          <article class="use-card reveal"><h3>Interviews</h3><p>Combine personal and project context, role requirements, and reference knowledge for contextual assistance.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section capabilities"><div class="container"><div class="section-heading reveal"><p class="kicker">Product capabilities</p><h2>Built around the conversation—not a separate workflow.</h2></div><div class="capability-grid-v2">
+      <article class="feature-card feature-primary reveal"><span class="feature-icon">01</span><h3>Outcome</h3><h4>Define what success looks like.</h4><blockquote>“Get my technical design approved in the leadership meeting.”</blockquote></article>
+      <article class="feature-card reveal"><span class="feature-icon">02</span><h3>Influence</h3><h4>Choose how strongly ThoughtWaveAI should support your outcome.</h4><div class="level-control" aria-label="Influence options"><span>Low</span><span>Medium</span><span class="selected">High</span></div></article>
+      <article class="feature-card feature-wide reveal"><span class="feature-icon">03</span><h3>Conversation Context</h3><h4>Give ThoughtWaveAI the context that matters.</h4><div class="context-pills"><span>Audience</span><span>Situation</span><span>Constraints</span><span>Concerns</span><span>Important facts</span><span>Desired positioning</span></div></article>
+      <article class="feature-card reveal"><span class="feature-icon">04</span><h3>Live Transcript</h3><p>Follow the running conversation as it develops, so assistance stays aligned with the moment.</p></article>
+      <article class="feature-card reveal"><span class="feature-icon">05</span><h3>AI Response</h3><p>Ask direct questions and receive focused answers while the conversation is still moving.</p></article>
+      <article class="feature-card accent-card reveal"><span class="feature-icon">06</span><h3>Assist</h3><p>Get concise guidance based on the recent conversation without having to formulate a full question.</p></article>
+      <article class="feature-card reveal"><span class="feature-icon">07</span><h3>Knowledge</h3><p>Include relevant documents and context when the conversation needs deeper grounding.</p></article>
+      <article class="feature-card feature-wide second-screen-card reveal"><div><span class="feature-icon">08</span><h3>Mobile / Second Screen</h3><h4>Keep your primary workspace focused.</h4><p>Follow the transcript and ThoughtWaveAI responses on another screen while keeping your primary workspace focused.</p></div><div class="device-visual" aria-hidden="true"><div class="monitor"><span></span></div><div class="phone"><span></span><i></i><i></i></div></div></article>
+    </div></div></section>
 
-    <section class="section" id="context">
-      <div class="container context-layout">
-        <div class="context-copy reveal"><p class="kicker">Bring the right context</p><h2>Knowledge, organized around the conversation.</h2><p>Upload session documents and let ThoughtWaveAI retrieve relevant portions for your requests. Choose the knowledge type as you add context—without interrupting the flow.</p>
-          <div class="taxonomy"><article><span>01</span><div><h3>My Context</h3><p>Your background, projects, organization, product, and relevant owned context.</p></div></article><article><span>02</span><div><h3>Requirements</h3><p>Client, role, business, audience, or other external requirements.</p></div></article><article><span>03</span><div><h3>Reference</h3><p>Supporting documentation, technical material, standards, and general reference knowledge.</p></div></article></div>
-        </div>
-        <div class="context-detail reveal"><div class="detail-top"><span>Live Transcript &amp; Chat</span><span>Knowledge Type</span></div><div class="detail-conversation"><span></span><p>Relevant session context stays connected to the conversation as it develops.</p></div><div class="detail-input"><span>Type a question or add context…</span><strong>My Context⌄</strong></div><p class="detail-note">A faithful detail view of the workflow shown in the product screenshot above.</p></div>
-      </div>
-    </section>
+    <section class="section dark-section" id="how-it-works"><div class="container"><div class="section-heading reveal"><p class="kicker">How it works</p><h2>From preparation to a stronger follow-through.</h2><p>A simple rhythm for every important conversation.</p></div><ol class="process-v2 reveal"><li><span>01</span><div><h3>Prepare</h3><p>Set Outcome, Influence, and Context.</p></div></li><li><span>02</span><div><h3>Converse</h3><p>ThoughtWaveAI follows the live conversation.</p></div></li><li><span>03</span><div><h3>Get Assistance</h3><p>Use Assist or Ask AI when you need guidance.</p></div></li><li><span>04</span><div><h3>Reflect</h3><p>Summarize, Review, and capture next steps.</p></div></li></ol></div></section>
 
-    <section class="section section-tint" id="how-it-works">
-      <div class="container"><div class="section-heading reveal"><p class="kicker">How it works</p><h2>A clear path from signal to assistance.</h2></div>
-        <div class="process reveal"><div class="process-step"><span>01</span><h3>Listen</h3><p>Follow the live conversation.</p></div><i aria-hidden="true">→</i><div class="process-step"><span>02</span><h3>Add Context</h3><p>Bring the material that matters.</p></div><i aria-hidden="true">→</i><div class="process-step"><span>03</span><h3>Understand</h3><p>Connect the current question and context.</p></div><i aria-hidden="true">→</i><div class="process-step"><span>04</span><h3>Assist</h3><p>Surface a relevant response.</p></div></div>
-      </div>
-    </section>
+    <section class="section post-session"><div class="container split-layout"><div class="reveal"><p class="kicker">After the conversation</p><h2>Turn the session into forward motion.</h2><div class="post-copy"><article><h3>Summarize</h3><p>Capture key topics, decisions, concerns, open questions, commitments, and follow-up.</p></article><article><h3>Review</h3><p>Evaluate how the conversation progressed against your Outcome and selected Influence.</p></article></div></div><div class="review-card reveal"><div class="review-head"><span>Outcome Progress</span><strong><i></i> Strong Progress</strong></div><h3>Get approval for the proposed architecture</h3><div class="progress"><span></span></div><div class="review-grid"><span>What Worked</span><span>Gaps</span><span>Missed Opportunities</span><span>Recommended Follow-up</span></div></div></div></section>
 
-    <section class="section interface-section">
-      <div class="container split-layout">
-        <div class="reveal"><p class="kicker">A focused real-time experience</p><h2>Present when you need it. Compact when you don’t.</h2><p>Keep the essential controls close while opening AI Response, Live Transcript &amp; Chat, session context, and settings when the moment calls for them.</p><ul class="check-list"><li>AI Response</li><li>Live Transcript &amp; Chat</li><li>Session context</li><li>Settings</li></ul></div>
-        <div class="toolbar-stage reveal"><p class="window-label">ThoughtWaveAI control bar</p><img src="./assets/screenshots/top-bar-active.png" alt="Compact ThoughtWaveAI toolbar with active green status indicator" width="673" height="32" loading="lazy"><p>A lightweight control surface for the live session.</p></div>
-      </div>
-    </section>
+    <section class="section getting-started-teaser"><div class="container split-layout"><div class="setup-preview reveal"><img src="./assets/screenshots/settings-window.png" alt="ThoughtWaveAI settings with appearance controls" width="677" height="430" loading="lazy"></div><div class="reveal"><p class="kicker">Getting Started</p><h2>Ready for your first conversation in a few clear steps.</h2><p>Set up your provider and speech recognition once. Then prepare each session with an Outcome, Influence, and the context that matters.</p><ul class="clean-list"><li>One-time setup guidance</li><li>Practical session examples</li><li>A simple live-use routine</li></ul><a class="button" href="./getting-started/">Open Getting Started <span aria-hidden="true">→</span></a></div></div></section>
 
-    <section class="section section-tint">
-      <div class="container split-layout settings-layout">
-        <div class="settings-stage reveal"><img src="./assets/screenshots/settings-window.png" alt="ThoughtWaveAI Settings showing overlay opacity, font size, and text color controls" width="677" height="430" loading="lazy"></div>
-        <div class="reveal"><p class="kicker">Make it work your way</p><h2>Control the experience, not just the answer.</h2><p>Adjust how ThoughtWaveAI appears and responds for the task in front of you.</p><div class="setting-tags"><span>Overlay opacity</span><span>Response font size</span><span>Text color</span><span>Response controls</span><span>Transcript controls</span><span>Coding language</span></div></div>
-      </div>
-    </section>
+    <section class="section privacy-section" id="privacy"><div class="container privacy-inner reveal"><div><p class="kicker">Privacy &amp; control</p><h2>Stay in control of your workspace.</h2></div><div class="privacy-grid"><article><span>Private</span><h3>Private by default</h3><p>Begin with a focused, private workspace.</p></article><article><span>Visible</span><h3>Adjustable visibility</h3><p>Choose how the experience appears on your screen.</p></article><article><span>Optional</span><h3>Second Screen</h3><p>Use mobile viewing only when it supports your workflow.</p></article><article><span>Session</span><h3>Session-level controls</h3><p>Control recording, context, and visibility for the conversation.</p></article></div></div></section>
 
-    <section class="section" id="shortcuts">
-      <div class="container shortcuts-layout"><div class="section-heading reveal"><p class="kicker">Shortcuts</p><h2>Stay in the conversation.</h2><p>Reach the controls you use most without breaking focus.</p></div>
-        <div class="shortcut-list reveal" role="list"><div role="listitem"><span><kbd>Alt</kbd> + <kbd>A</kbd></span><p>Toggle interaction / click-through mode</p></div><div role="listitem"><span><kbd>Alt</kbd> + <kbd>M</kbd></span><p>Start / stop recording</p></div><div role="listitem"><span><kbd>Alt</kbd> + <kbd>R</kbd></span><p>Show / hide AI response</p></div><div role="listitem"><span><kbd>Alt</kbd> + <kbd>T</kbd></span><p>Show / hide transcript</p></div><div role="listitem"><span><kbd>Alt</kbd> + <kbd>↑</kbd></span><p>Increase opacity</p></div><div role="listitem"><span><kbd>Alt</kbd> + <kbd>↓</kbd></span><p>Decrease opacity</p></div></div>
-      </div>
-    </section>
-
-    <section class="responsible"><div class="container responsible-inner reveal"><div><p class="kicker">Responsible use</p><h2>Built for intentional use.</h2></div><p>ThoughtWaveAI gives the user explicit control over recording, context, visibility, and session behavior. Users are responsible for using recording and AI assistance in accordance with applicable laws, policies, and consent requirements.</p></div></section>
-
-    <section class="section beta" id="beta"><div class="container beta-inner reveal"><img src="./assets/branding/thoughtwaveai-logo-white.png" alt="ThoughtWaveAI emblem" width="120" height="80" loading="lazy"><p class="kicker">Private beta</p><h2>ThoughtWaveAI Private Beta</h2><p>ThoughtWaveAI is currently being refined through controlled Windows testing.</p><button class="button" id="beta-access-trigger" type="button" aria-haspopup="dialog">Request Beta Access <span aria-hidden="true">→</span></button></div></section>
+    <section class="section beta" id="beta"><div class="container beta-inner reveal"><img src="./assets/branding/thoughtwaveai-Icon.png" alt="ThoughtWaveAI emblem" width="80" height="80" loading="lazy"><p class="kicker">Private beta</p><h2>Bring intelligence into your next important conversation.</h2><p>ThoughtWaveAI is currently being refined through controlled Windows testing.</p><button class="button" type="button" data-beta-trigger>Request Beta Access <span aria-hidden="true">→</span></button></div></section>
   </main>
 
-  <footer><div class="container footer-inner"><a href="https://github.com/aniruddhtiwari" target="_blank" rel="noopener noreferrer">ThoughtWaveAI by Aniruddh Tiwari &amp; Payal Tiwari</a><p>© <span id="year">2026</span> ThoughtWaveAI. All rights reserved.</p></div></footer>
+  <footer><div class="container footer-inner"><a href="https://github.com/aniruddhtiwari" target="_blank" rel="noopener noreferrer">ThoughtWaveAI by Aniruddh Tiwari &amp; Payal Tiwari</a><div><a href="./getting-started/">Getting Started</a><span>© <span id="year">2026</span> ThoughtWaveAI</span></div></div></footer>
 
-  <div class="modal-backdrop" id="beta-access-modal" hidden>
-    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="beta-modal-title" aria-describedby="beta-modal-intro beta-modal-examples">
-      <button class="modal-close" type="button" aria-label="Close beta access dialog">×</button>
-      <p class="kicker">Private beta</p>
-      <h2 id="beta-modal-title">Request ThoughtWaveAI Beta Access</h2>
-      <p id="beta-modal-intro">We’re currently inviting a small number of beta users. To help us understand where ThoughtWaveAI can create the most value, please tell us how you would use it in a real-world business scenario.</p>
-      <p class="modal-prompt">Please include:</p>
-      <ol class="modal-list">
-        <li>Your role / industry</li>
-        <li>A brief business scenario where you would use ThoughtWaveAI</li>
-        <li>What you would want ThoughtWaveAI to help you accomplish during that conversation</li>
-      </ol>
-      <p class="modal-examples" id="beta-modal-examples">Examples: client meeting, sales pitch, executive review, technical discussion, consulting session, presentation, brainstorming, or another professional use case.</p>
-      <div class="modal-actions">
-        <a class="button" href="mailto:aniruddhtiwari83@gmail.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Aniruddh</a>
-        <a class="button button-secondary" href="mailto:payal.sagi@yahoo.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Payal</a>
-      </div>
-    </section>
-  </div>
+  <div class="modal-backdrop" id="beta-access-modal" hidden><section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="beta-modal-title" aria-describedby="beta-modal-intro beta-modal-examples"><button class="modal-close" type="button" aria-label="Close beta access dialog">×</button><p class="kicker">Private beta</p><h2 id="beta-modal-title">Request ThoughtWaveAI Beta Access</h2><p id="beta-modal-intro">We’re currently inviting a small number of beta users. To help us understand where ThoughtWaveAI can create the most value, please tell us how you would use it in a real-world business scenario.</p><p class="modal-prompt">Please include:</p><ol class="modal-list"><li>Your role / industry</li><li>A brief business scenario where you would use ThoughtWaveAI</li><li>What you would want ThoughtWaveAI to help you accomplish during that conversation</li></ol><p class="modal-examples" id="beta-modal-examples">Examples: client meeting, sales pitch, executive review, technical discussion, consulting session, presentation, brainstorming, or another professional use case.</p><div class="modal-actions"><a class="button" href="mailto:aniruddhtiwari83@gmail.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Aniruddh</a><a class="button button-secondary" href="mailto:payal.sagi@yahoo.com?subject=ThoughtWaveAI%20Beta%20Access%20Request&amp;body=Role%20%2F%20Industry%3A%0D%0A%0D%0ABusiness%20Use%20Case%3A%0D%0A%0D%0AWhat%20I%20would%20like%20ThoughtWaveAI%20to%20help%20with%3A%0D%0A%0D%0AAdditional%20context%3A">Email Payal</a></div></section></div>
 </body>
 </html>
