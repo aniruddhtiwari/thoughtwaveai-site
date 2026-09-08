@@ -422,3 +422,193 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   display: block;
   white-space: nowrap;
 }
+
+/* ---------- R1 mobile responsiveness pass ---------- */
+@media(max-width:980px){
+  .section{padding:88px 0}
+  .hero{padding:82px 0 88px}
+  .hero-grid{gap:48px}
+  .hero-copy{max-width:none}
+  .rc-product-view{width:min(100%,760px);margin-inline:auto}
+
+  .enterprise-section .section-heading{max-width:100%!important}
+  .enterprise-section .enterprise-headline span{white-space:normal}
+
+  .lifecycle-ring-layout{grid-template-columns:1fr;gap:30px}
+  .lifecycle-ring-holder{width:min(100%,700px);margin-inline:auto}
+  .lifecycle-ring-detail{min-height:0}
+
+  .split-layout,
+  .privacy-inner{
+    grid-template-columns:1fr;
+    gap:42px;
+  }
+
+  .session-context-section .split-layout,
+  .mobile-section .split-layout{
+    align-items:start;
+  }
+
+  .phase-heading{grid-template-columns:1fr;gap:14px}
+  .after-order{grid-template-columns:1fr}
+  .privacy-grid{grid-template-columns:1fr 1fr}
+  .getting-started-steps{max-width:720px}
+}
+
+@media(max-width:760px){
+  html{scroll-padding-top:72px}
+  .container{width:min(calc(100% - 28px),var(--max))}
+
+  .section{padding:68px 0}
+  .hero{padding:64px 0 70px}
+  .hero-grid{gap:38px}
+  .hero-orb{width:460px;height:460px;right:-260px;top:-210px}
+
+  h1{
+    font-size:clamp(2.55rem,12vw,4rem);
+    line-height:1;
+    letter-spacing:-.05em;
+    margin:16px 0 22px;
+  }
+
+  h2{
+    font-size:clamp(2rem,9vw,3rem);
+    line-height:1.06;
+    letter-spacing:-.04em;
+  }
+
+  .section-heading{max-width:none;margin-bottom:36px}
+  .section-heading>p:last-child{font-size:1rem}
+
+  .hero-lede{font-size:1.04rem;line-height:1.65}
+  .hero-detail{font-size:.96rem;line-height:1.65}
+  .hero-actions{gap:16px;flex-wrap:wrap;margin-top:28px}
+  .signal-list{margin-top:30px}
+
+  .enterprise-section .enterprise-headline{
+    width:100%;
+    max-width:none!important;
+  }
+
+  .enterprise-section .enterprise-headline span{
+    display:inline;
+    white-space:normal;
+  }
+
+  .enterprise-section .enterprise-headline span::after{content:" "}
+  .enterprise-section .enterprise-headline span:last-child::after{content:""}
+
+  .prep-grid,
+  .during-grid,
+  .story-flow{
+    grid-template-columns:1fr;
+  }
+
+  .context-card{grid-column:auto}
+  .prep-grid article,.during-grid article{padding:24px}
+
+  .lifecycle-principles{grid-template-columns:1fr}
+  .lifecycle-ring-holder{width:100%}
+  .lifecycle-ring-detail{padding:26px}
+
+  .rc-product-view{border-radius:16px}
+  .rc-prep{padding:18px}
+  .rc-discussion{padding:18px}
+  .rc-actions{padding:0 18px 18px}
+
+  .rc-discussion>p,
+  .mobile-discussion>p{
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+
+  .context-sheet{padding:20px}
+  .sheet-head{display:grid;gap:8px}
+  .sheet-head small{text-align:left}
+
+  .mobile-companion{width:min(100%,430px);border-radius:20px}
+
+  .after-order article{padding:24px}
+  .review-dimensions{gap:10px}
+
+  .privacy-grid{grid-template-columns:1fr}
+
+  .getting-started-steps{padding:22px}
+  .use-case-row{gap:8px}
+
+  .beta{padding:82px 0}
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+  .footer-inner>div{
+    flex-wrap:wrap;
+    gap:12px 20px;
+  }
+}
+
+@media(max-width:520px){
+  .brand span{font-size:.95rem}
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    align-items:stretch;
+  }
+
+  .hero-actions .button{width:100%}
+
+  .hero-actions .text-link{
+    display:inline-flex;
+    justify-content:center;
+    padding:8px 0;
+  }
+
+  .signal-list{gap:7px}
+  .signal-list li{font-size:.69rem}
+
+  .enterprise-section .section-heading{margin-bottom:34px}
+
+  .lifecycle-ring-detail{padding:22px}
+  .lifecycle-principles article{padding:19px}
+
+  .prep-grid article,.during-grid article{padding:22px}
+  .file-pills,.context-examples{gap:7px}
+
+  .context-sheet{padding:17px}
+
+  .context-item{
+    grid-template-columns:32px 1fr;
+    gap:11px;
+  }
+
+  .mobile-header{padding:16px}
+  .mobile-action-row{padding:12px 15px}
+  .mobile-discussion{padding:8px 15px 18px}
+
+  .carry-step{
+    grid-template-columns:40px 1fr;
+    gap:12px;
+    padding:16px;
+  }
+
+  .download-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .download-actions .button{width:100%}
+
+  .tw-ring-inner-label,
+  .tw-ring-featured-label,
+  .tw-ring-outer-label{
+    font-size:19px;
+  }
+
+  .tw-ring-hub-title{font-size:29px}
+  .tw-ring-hub-sub{font-size:15px}
+}
