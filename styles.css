@@ -406,3 +406,19 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   font-size:.9rem;
   line-height:1.55;
 }
+
+/* Enterprise headline layout */
+.enterprise-section .section-heading{
+  max-width: 1180px !important;
+  width: 100%;
+}
+
+.enterprise-section .enterprise-headline{
+  max-width: none !important;
+  width: 100%;
+}
+
+.enterprise-section .enterprise-headline span{
+  display: block;
+  white-space: nowrap;
+}
