@@ -612,3 +612,172 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   .tw-ring-hub-title{font-size:29px}
   .tw-ring-hub-sub{font-size:15px}
 }
+
+/* ---------- Enterprise capability ticker ---------- */
+.enterprise-ticker{
+  position:relative;
+  overflow:hidden;
+  border-top:1px solid rgba(46,139,232,.16);
+  border-bottom:1px solid rgba(46,139,232,.18);
+  background:
+    radial-gradient(circle at 18% 50%,rgba(0,194,255,.12),transparent 30%),
+    linear-gradient(100deg,#071a32 0%,#0a2442 48%,#07192e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 18px 44px rgba(9,40,75,.10);
+}
+
+.enterprise-ticker::before,
+.enterprise-ticker::after{
+  content:"";
+  position:absolute;
+  z-index:2;
+  top:0;
+  bottom:0;
+  width:min(9vw,120px);
+  pointer-events:none;
+}
+
+.enterprise-ticker::before{
+  left:0;
+  background:linear-gradient(90deg,#071a32 10%,rgba(7,26,50,0));
+}
+
+.enterprise-ticker::after{
+  right:0;
+  background:linear-gradient(270deg,#07192e 10%,rgba(7,25,46,0));
+}
+
+.enterprise-ticker-viewport{
+  overflow:hidden;
+  padding:16px 0;
+}
+
+.enterprise-ticker-track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  animation:tw-enterprise-ticker 30s linear infinite;
+  will-change:transform;
+}
+
+.enterprise-ticker:hover .enterprise-ticker-track{
+  animation-play-state:paused;
+}
+
+.enterprise-ticker-group{
+  display:flex;
+  flex:none;
+  align-items:center;
+  gap:16px;
+  padding-right:32px;
+  color:#d9ecff;
+  white-space:nowrap;
+  font-size:.88rem;
+  font-weight:760;
+  letter-spacing:.015em;
+}
+
+.enterprise-ticker-group span,
+.enterprise-ticker-group strong{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:6px 12px;
+  border:1px solid rgba(111,199,255,.16);
+  border-radius:999px;
+  background:rgba(255,255,255,.035);
+  box-shadow:inset 0 0 22px rgba(14,154,255,.035);
+}
+
+.enterprise-ticker-group strong{
+  color:#ecfbff;
+  border-color:rgba(23,221,229,.34);
+  background:linear-gradient(90deg,rgba(0,174,255,.10),rgba(0,229,218,.10));
+  box-shadow:
+    inset 0 0 24px rgba(0,215,230,.08),
+    0 0 22px rgba(0,180,255,.08);
+}
+
+.enterprise-ticker-group strong b{
+  margin:0 .22em;
+  color:#36e7ef;
+  font-size:1.08em;
+  text-shadow:0 0 18px rgba(54,231,239,.46);
+}
+
+.enterprise-ticker-group i{
+  color:#3bdde8;
+  font-style:normal;
+  font-size:1.15rem;
+  text-shadow:0 0 13px rgba(59,221,232,.46);
+}
+
+@keyframes tw-enterprise-ticker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---------- Enterprise proof graphic ---------- */
+.enterprise-proof{
+  position:relative;
+  max-width:1180px;
+  margin:44px auto 0;
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(38,126,215,.22);
+  border-radius:22px;
+  background:#071a32;
+  box-shadow:
+    0 24px 60px rgba(13,48,83,.16),
+    0 0 0 1px rgba(255,255,255,.03) inset;
+}
+
+.enterprise-proof::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  box-shadow:inset 0 0 42px rgba(0,191,255,.05);
+}
+
+.enterprise-proof img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+@media(max-width:760px){
+  .enterprise-ticker-viewport{padding:13px 0}
+  .enterprise-ticker-group{
+    gap:10px;
+    padding-right:20px;
+    font-size:.78rem;
+  }
+  .enterprise-ticker-group span,
+  .enterprise-ticker-group strong{
+    min-height:31px;
+    padding:5px 10px;
+  }
+  .enterprise-proof{
+    margin-top:32px;
+    border-radius:16px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .enterprise-ticker-track{
+    animation:none;
+    transform:none;
+  }
+  .enterprise-ticker-viewport{
+    overflow-x:auto;
+    scrollbar-width:thin;
+  }
+  .enterprise-ticker-group[aria-hidden="true"]{
+    display:none;
+  }
+}
