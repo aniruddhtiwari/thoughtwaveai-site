@@ -69,7 +69,7 @@ if (lifecycleRing) {
     },
 
     ri: {
-      title: 'Right Intelligence',
+      title: 'Real Intelligence',
       micro: 'Discussion · Ask TW · Assist · TW Intelligence Assist',
       copy: 'Surface the right help at the right time—whether you ask directly, request assistance, or ThoughtWaveAI identifies something worth raising.'
     },
