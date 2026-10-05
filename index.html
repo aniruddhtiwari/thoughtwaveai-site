@@ -200,26 +200,26 @@
     <section class="section beta" id="download"><div class="container beta-inner download-section reveal">
       <img src="./assets/branding/thoughtwaveai-Icon.png" alt="ThoughtWaveAI emblem" width="80" height="80" loading="lazy">
       <p class="kicker">ThoughtWaveAI Beta 1.0.0</p>
-      <h2>Download ThoughtWaveAI.</h2>
+      <h2>Beta update in progress.</h2>
       <p>Choose the build for your computer.</p>
       <div class="download-options" aria-label="ThoughtWaveAI downloads">
         <article class="download-option download-option-primary">
           <span class="download-platform">Windows</span>
           <h3>Windows x64</h3>
           <p>Installer for supported 64-bit Windows PCs.</p>
-          <a class="button" href="https://thoughtwaveai-feedback-worker.thoughtwaveai-feedback.workers.dev/download?target=windows_x64" aria-label="Download ThoughtWaveAI Beta for Windows x64">Download Beta for Windows <span aria-hidden="true">→</span></a>
+          <a class="button" href="#download" aria-disabled="true" data-beta-update="true" aria-label="Download ThoughtWaveAI Beta for Windows x64">Beta update in progress</a>
         </article>
         <article class="download-option">
           <span class="download-platform">macOS · Apple Silicon</span>
           <h3>Apple-chip Macs</h3>
           <p>M1, M2, M3, M4, and newer Apple-chip Macs.</p>
-          <a class="button button-secondary" href="https://thoughtwaveai-feedback-worker.thoughtwaveai-feedback.workers.dev/download?target=macos_arm64" aria-label="Download ThoughtWaveAI Beta for Mac with Apple Silicon">Download Beta for Mac <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#download" aria-disabled="true" data-beta-update="true" aria-label="Download ThoughtWaveAI Beta for Mac with Apple Silicon">Beta update in progress</a>
         </article>
         <article class="download-option">
           <span class="download-platform">macOS · Intel</span>
           <h3>Intel-based Macs</h3>
           <p>Older Intel-based Macs.</p>
-          <a class="button button-secondary" href="https://thoughtwaveai-feedback-worker.thoughtwaveai-feedback.workers.dev/download?target=macos_x64" aria-label="Download ThoughtWaveAI Beta for Mac with an Intel processor">Download Beta for Mac <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#download" aria-disabled="true" data-beta-update="true" aria-label="Download ThoughtWaveAI Beta for Mac with an Intel processor">Beta update in progress</a>
         </article>
       </div>
       <div class="download-guide-links" aria-label="ThoughtWaveAI installation guides">
@@ -232,5 +232,15 @@
   </main>
 
   <footer><div class="container footer-inner"><a href="https://github.com/aniruddhtiwari" target="_blank" rel="noopener noreferrer">ThoughtWaveAI by Aniruddh Tiwari &amp; Payal Tiwari</a><div><a href="./getting-started/">Getting Started</a><a href="./privacy/">Privacy</a><span>© <span id="year">2026</span> ThoughtWaveAI</span></div></div></footer>
+
+<!-- TW_BETA_UPDATE_DOWNLOAD_GUARD -->
+<script>
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('[data-beta-update="true"]');
+  if (!link) return;
+  event.preventDefault();
+});
+</script>
+
 </body>
 </html>
