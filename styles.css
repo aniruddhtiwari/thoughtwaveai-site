@@ -876,3 +876,11 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   .download-guide-links { grid-template-columns: 1fr; gap: 10px; }
   .download-guide-windows, .download-guide-macos { grid-column: 1; }
 }
+
+/* TW hero agentic category eyebrow typography */
+.rc-hero .eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  line-height: 1.5;
+}
