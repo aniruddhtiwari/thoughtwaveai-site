@@ -884,3 +884,12 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   letter-spacing: 0.10em;
   line-height: 1.5;
 }
+
+/* Let the category label span the hero column gap on wide screens only. */
+@media (min-width: 1200px) {
+  .rc-hero .eyebrow {
+    white-space: nowrap;
+    width: max-content;
+    max-width: none;
+  }
+}
