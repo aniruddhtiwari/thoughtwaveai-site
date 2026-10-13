@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$SitemapPath = (Join-Path $PSScriptRoot '..\sitemap.xml'),
+    [string]$SitemapPath,
     [ValidateRange(3, 60)]
     [int]$TimeoutSeconds = 15,
     [ValidateRange(1, 3)]
@@ -11,6 +11,20 @@ $ErrorActionPreference = 'Stop'
 $script:PassCount = 0
 $script:WarningCount = 0
 $script:FailCount = 0
+
+$scriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
+if ([string]::IsNullOrWhiteSpace($SitemapPath)) {
+    $SitemapPath = Join-Path -Path $scriptDirectory -ChildPath '..\sitemap.xml'
+}
+
+Add-Type -AssemblyName System.Net.Http
+if ([Net.ServicePointManager]::SecurityProtocol -band [Net.SecurityProtocolType]::Tls12) {
+    # Preserve the current protocol selection when TLS 1.2 is already enabled.
+}
+else {
+    [Net.ServicePointManager]::SecurityProtocol =
+        [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+}
 
 function Add-CheckResult {
     param(
@@ -37,14 +51,37 @@ function Invoke-PublicRequest {
 
     $lastError = $null
     for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+        $handler = $null
+        $client = $null
         try {
-            $response = Invoke-WebRequest `
-                -Uri $Uri `
-                -Method Get `
-                -MaximumRedirection 10 `
-                -SkipHttpErrorCheck `
-                -TimeoutSec $TimeoutSeconds `
-                -Headers @{ 'User-Agent' = 'ThoughtWaveAI-Public-SEO-Check/1.0' }
+            $handler = New-Object Net.Http.HttpClientHandler
+            $handler.AllowAutoRedirect = $true
+            $handler.MaxAutomaticRedirections = 10
+
+            $client = New-Object Net.Http.HttpClient -ArgumentList $handler
+            $client.Timeout = [TimeSpan]::FromSeconds($TimeoutSeconds)
+            [void]$client.DefaultRequestHeaders.UserAgent.ParseAdd('ThoughtWaveAI-Public-SEO-Check/1.0')
+
+            $httpResponse = $client.GetAsync($Uri).GetAwaiter().GetResult()
+            $content = $httpResponse.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+            $xRobotsTag = $null
+            $headerValues = $null
+            if ($httpResponse.Headers.TryGetValues('X-Robots-Tag', [ref]$headerValues)) {
+                $xRobotsTag = $headerValues -join ','
+            }
+
+            $response = [pscustomobject]@{
+                StatusCode = [int]$httpResponse.StatusCode
+                FinalUri = $httpResponse.RequestMessage.RequestUri
+                ContentType = if ($httpResponse.Content.Headers.ContentType) {
+                    $httpResponse.Content.Headers.ContentType.ToString()
+                }
+                else {
+                    ''
+                }
+                Content = $content
+                XRobotsTag = $xRobotsTag
+            }
 
             return [pscustomobject]@{
                 Response = $response
@@ -53,10 +90,18 @@ function Invoke-PublicRequest {
             }
         }
         catch {
-            $lastError = $_.Exception.Message
+            $exception = $_.Exception
+            while ($exception.InnerException) {
+                $exception = $exception.InnerException
+            }
+            $lastError = $exception.Message
             if ($attempt -lt $Attempts) {
                 Start-Sleep -Milliseconds 400
             }
+        }
+        finally {
+            if ($client) { $client.Dispose() }
+            if ($handler) { $handler.Dispose() }
         }
     }
 
@@ -212,12 +257,12 @@ foreach ($pageUri in $pageUris) {
         continue
     }
 
-    $finalUri = $response.BaseResponse.RequestMessage.RequestUri
+    $finalUri = $response.FinalUri
     if ($finalUri.AbsoluteUri -ne $pageUri.AbsoluteUri) {
         Add-CheckResult -Level 'FAIL' -Scope $scope -Message "Canonical sitemap URL redirects to $($finalUri.AbsoluteUri)."
     }
 
-    $contentType = ($response.Headers['Content-Type'] -join ', ')
+    $contentType = $response.ContentType
     if ($contentType -notmatch '(?i)^text/html\b') {
         Add-CheckResult -Level 'FAIL' -Scope $scope -Message "Expected an HTML content type; received '$contentType'."
         continue
@@ -270,7 +315,7 @@ foreach ($pageUri in $pageUris) {
 
     $robotsValues = @(
         (Get-MetaContent -Html $html -Key 'robots'),
-        ($response.Headers['X-Robots-Tag'] -join ',')
+        $response.XRobotsTag
     ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
     $robotsText = $robotsValues -join ', '
     if ($robotsText -match '(?i)(^|[,;\s])(noindex|none)(?=$|[,;\s:])') {
@@ -313,7 +358,7 @@ foreach ($assetUrl in ($assets.Keys | Sort-Object)) {
         continue
     }
 
-    $contentType = ($response.Headers['Content-Type'] -join ', ')
+    $contentType = $response.ContentType
     $typeMismatch = $false
     if ($kinds -contains 'stylesheet' -and $contentType -notmatch '(?i)^text/css\b') { $typeMismatch = $true }
     if ($kinds -contains 'script' -and $contentType -notmatch '(?i)(javascript|ecmascript)') { $typeMismatch = $true }
