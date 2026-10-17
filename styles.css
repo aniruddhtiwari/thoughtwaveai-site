@@ -1234,3 +1234,13 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
     width: 100%;
   }
 }
+
+/* SEO/GEO: all scenarios remain available as a semantic no-JavaScript fallback. */
+.tw-seo-catalog[hidden] { display:none !important; }
+.tw-seo-catalog { max-width:900px; margin:2rem auto 0; line-height:1.65; }
+.tw-seo-example { border-top:1px solid #dce5ed; padding:1rem 0; }
+.tw-seo-example blockquote { margin:.6rem 0; padding-left:1rem; border-left:3px solid #ccd9e7; }
+.tw-faq-list { max-width:900px; margin:auto; }
+.tw-faq-list details { border-bottom:1px solid #dce5ed; padding:1rem 0; }
+.tw-faq-list summary { cursor:pointer; font-weight:700; }
+.tw-faq-list p { margin:.7rem 0 0; line-height:1.6; color:#53667c; }
