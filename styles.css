@@ -1086,3 +1086,151 @@ body.modal-open{overflow:hidden}.modal-backdrop[hidden]{display:none}.modal-back
   .v3-wheel-track > span:not(:nth-child(5)) { visibility: hidden; }
   .v3-wheel-track > span:nth-child(5) { visibility: visible; }
 }
+
+
+/* Homepage simplification — scenarios and real-product walkthrough. */
+.tw-use-cases{background:#fff}
+.tw-scenario-selector{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 20px}
+.tw-choice,.tw-step{font:inherit;text-align:left;cursor:pointer;border:1px solid #d8e4ef;background:#fff;color:#102b49;border-radius:16px;transition:border-color .2s,background .2s,box-shadow .2s}
+.tw-choice{padding:20px;min-height:122px;display:flex;flex-direction:column;gap:10px}
+.tw-choice strong{font-size:1rem}.tw-choice span{font-size:.84rem;line-height:1.5;color:#59718a}
+.tw-choice.is-active,.tw-step.is-active{border-color:#096df2;background:#f0f7ff;box-shadow:0 8px 25px rgba(9,109,242,.1)}
+.tw-choice:focus-visible,.tw-step:focus-visible{outline:3px solid #28b5ee;outline-offset:3px}
+.tw-scenario-panel{border:1px solid #d8e4ef;border-radius:22px;background:#f7faff;padding:28px;box-shadow:0 18px 48px rgba(19,55,97,.07)}
+.tw-example-label{color:#1765bd;font-weight:800;font-size:.7rem;letter-spacing:.12em}
+.tw-scenario-context h3{margin:10px 0;font-size:clamp(1.3rem,2.2vw,1.9rem);color:#071a38}
+.tw-scenario-context p{color:#58708a;margin:0 0 22px}
+.tw-scenario-dialogue{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tw-spoken,.tw-assisted{padding:22px;border-radius:16px;background:#fff;border:1px solid #dce5f0}
+.tw-assisted{background:#eaf7ff;border-color:#a7dfff}
+.tw-spoken span,.tw-assisted span{font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#2267a3}
+.tw-spoken blockquote{margin:14px 0 0;padding:0;border:0;color:#16324e;font-size:1.05rem;line-height:1.65}
+.tw-assisted p{margin:14px 0 0;color:#16324e;line-height:1.65}
+.tw-scenario-benefit{margin:20px 0 0;color:#14734e;font-weight:750}
+.tw-how-layout{display:grid;grid-template-columns:minmax(260px,.86fr) minmax(0,1.14fr);gap:25px;align-items:stretch}
+.tw-how-steps{display:flex;flex-direction:column;gap:12px}
+.tw-step{padding:20px;display:flex;gap:16px;align-items:flex-start}
+.tw-step-num{display:grid;place-items:center;flex:0 0 37px;height:37px;border-radius:50%;background:#edf6ff;color:#096df2;font-weight:800;font-size:.78rem}
+.tw-step strong{display:block;font-size:1rem;line-height:1.35;margin:0 0 9px}
+.tw-step small{display:block;color:#59718a;font-size:.87rem;line-height:1.6}
+.tw-preview-frame{min-height:350px;padding:14px;border-radius:20px;background:#fff;border:1px solid #d8e4ef;box-shadow:0 18px 48px rgba(19,55,97,.09);display:flex;flex-direction:column}
+.tw-preview-top{display:flex;align-items:center;gap:9px;color:#61758c;font-size:.76rem;font-weight:700;padding:4px 4px 14px}
+.tw-preview-dot{width:9px;height:9px;background:#20b98a;border-radius:50%}
+.tw-preview-frame img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;border-radius:10px;background:#eef4fa}
+.tw-preview-frame img[hidden]{display:none}
+.tw-preview-fallback{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:10px;min-height:220px;background:#f4f8fc;border-radius:10px;padding:20px}
+.tw-preview-fallback[hidden]{display:none}
+.tw-preview-fallback p{max-width:350px;color:#61758c;margin:0}
+.tw-preview-frame>p{margin:14px 4px 2px;color:#59718a;font-size:.83rem;line-height:1.5}
+@media(max-width:900px){.tw-scenario-selector{grid-template-columns:repeat(2,minmax(0,1fr))}.tw-how-layout{grid-template-columns:1fr}}
+@media(max-width:560px){.tw-scenario-selector{gap:9px}.tw-choice{padding:13px;min-height:125px}.tw-choice strong{font-size:.9rem}.tw-choice span{font-size:.78rem}.tw-scenario-dialogue{grid-template-columns:1fr}.tw-scenario-panel{padding:17px}.tw-preview-frame{min-height:250px}}
+@media(prefers-reduced-motion:reduce){.tw-choice,.tw-step{transition:none}}
+
+/* Homepage refinement: exact two-line hero at wide desktop widths; wrap naturally on narrower screens. */
+@media (min-width: 1100px) {
+  .v3-hero-copy { max-width: 1160px; font-size: 1.02rem; line-height: 1.65; }
+  .v3-hero-copy .tw-hero-line { display: block; white-space: nowrap; }
+}
+@media (max-width: 1099px) { .v3-hero-copy .tw-hero-line { display: inline; } }
+
+/* TW audience tabs added to the existing scenario section. */
+.tw-audience-switch{display:flex;gap:8px;padding:6px;margin:28px 0 4px;max-width:480px;background:#eaf2fb;border-radius:15px}
+.tw-audience-tab{flex:1;appearance:none;border:1px solid transparent;border-radius:11px;background:transparent;color:#345270;font:inherit;font-weight:750;padding:12px 15px;cursor:pointer}
+.tw-audience-tab.is-active{background:#fff;border-color:#b6d4fa;color:#095bb4;box-shadow:0 3px 12px rgba(24,79,128,.09)}
+.tw-audience-tab:focus-visible{outline:3px solid #28b5ee;outline-offset:3px}
+.tw-context-source{font-size:.82rem!important;color:#426d8e!important;border-top:1px solid #cae8f9;padding-top:12px;margin-top:17px!important;font-style:italic}
+.tw-scenario-qualifier{font-size:.8rem;color:#657c92;margin:13px 0 0;line-height:1.6}
+@media(max-width:560px){.tw-audience-switch{max-width:none}.tw-audience-tab{padding:11px 8px;font-size:.9rem}}
+
+
+/* Patch: keep audience tabs on one line and give all three boxes more room */
+.tw-audience-tabs,
+.tw-audience-selector,
+.tw-scenario-audience-tabs,
+.scenario-audience-tabs,
+.audience-tabs,
+.use-case-audience-tabs,
+[data-tw-audience-tabs] {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.tw-audience-tabs > *,
+.tw-audience-selector > *,
+.tw-scenario-audience-tabs > *,
+.scenario-audience-tabs > *,
+.audience-tabs > *,
+.use-case-audience-tabs > *,
+[data-tw-audience-tabs] > * {
+  min-width: 220px;
+}
+
+.tw-audience-tab,
+.tw-audience-selector button,
+.tw-scenario-audience-tab,
+.scenario-audience-tab,
+.audience-tab,
+.use-case-audience-tab,
+[data-tw-audience-tabs] > button,
+[data-tw-audience-tabs] > * {
+  white-space: nowrap;
+  min-width: 220px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .tw-audience-tabs,
+  .tw-audience-selector,
+  .tw-scenario-audience-tabs,
+  .scenario-audience-tabs,
+  .audience-tabs,
+  .use-case-audience-tabs,
+  [data-tw-audience-tabs] {
+    grid-template-columns: 1fr;
+  }
+
+  .tw-audience-tabs > *,
+  .tw-audience-selector > *,
+  .tw-scenario-audience-tabs > *,
+  .scenario-audience-tabs > *,
+  .audience-tabs > *,
+  .use-case-audience-tabs > *,
+  [data-tw-audience-tabs] > *,
+  .tw-audience-tab,
+  .tw-audience-selector button,
+  .tw-scenario-audience-tab,
+  .scenario-audience-tab,
+  .audience-tab,
+  .use-case-audience-tab,
+  [data-tw-audience-tabs] > button {
+    min-width: 0;
+  }
+}
+
+/* TW audience tabs: full three-tab backdrop (2026-10) */
+.tw-use-cases .tw-audience-switch {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(190px, 1fr));
+  width: min(100%, 660px);
+  max-width: 100%;
+  gap: 6px;
+}
+.tw-use-cases .tw-audience-switch > .tw-audience-tab {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .tw-use-cases .tw-audience-switch {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
