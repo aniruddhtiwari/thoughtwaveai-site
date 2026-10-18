@@ -1,6 +1,6 @@
 # ThoughtWaves Website
 
-This repository contains the public ThoughtWaves website for the ThoughtWaveAI desktop app — a real-time AI companion for conversations, context, and professional work.
+This repository contains the public ThoughtWaves website for a real-time AI companion for conversations, context, and professional work.
 
 Preview locally from the repository root with `python -m http.server 8080`, then open `http://localhost:8080/`.
 
