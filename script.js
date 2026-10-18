@@ -53,7 +53,7 @@ if (lifecycleRing) {
     control: {
       title: 'Control',
       micro: 'Stay in control of the conversation.',
-      copy: 'Choose how ThoughtWaveAI supports the moment—follow Discussion, ask directly with Ask TW, request Assist, or consider proactive TW Intelligence Assist.'
+      copy: 'Choose how ThoughtWaves supports the moment—follow Discussion, ask directly with Ask TW, request Assist, or consider proactive TW Intelligence Assist.'
     },
 
     reflect: {
@@ -71,7 +71,7 @@ if (lifecycleRing) {
     ri: {
       title: 'Real Intelligence',
       micro: 'Discussion · Ask TW · Assist · TW Intelligence Assist',
-      copy: 'Surface the right help at the right time—whether you ask directly, request assistance, or ThoughtWaveAI identifies something worth raising.'
+      copy: 'Surface the right help at the right time—whether you ask directly, request assistance, or ThoughtWaves identifies something worth raising.'
     },
 
     conclude: {
